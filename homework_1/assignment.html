@@ -1,0 +1,463 @@
+<!--?xml version="1.0" encoding="utf-8" ?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml-transitional.dtd">
+<html><head>
+  <title>holoumar@progtest.fit.cvut.cz - ProgTest</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="assignment_files/css.css" rel="stylesheet" type="text/css">
+  <script src="assignment_files/shared.js" language="JavaScript" type="text/javascript"></script>
+  
+ </head>
+ <body text="#000000" bgcolor="#828273">
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+   <tbody><tr height="25">
+    <td bgcolor="#00ff00" align="left"><span class="navLink"><a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Main">ProgTest</a>&nbsp;&nbsp;►&nbsp;&nbsp;<a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Course&amp;Cou=87">BI-PA1 (13/14 ZS)</a>&nbsp;&nbsp;►&nbsp;&nbsp;<a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=TaskGrp&amp;Cou=87&amp;Tgr=579">Domácí úloha 01</a>&nbsp;&nbsp;►&nbsp;&nbsp;<b>Dvě kružnice</b></span></td>
+    <td bgcolor="#00ff00" align="right"><a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Logout">Logout</a></td>
+   </tr>
+  </tbody></table>
+<br>
+
+
+
+
+ <br>
+ <br>
+   <center>
+   <div class="topLayout">
+    <div class="outBox">
+     <table class="header" width="100%" cellspacing="0" cellpadding="0">
+      <tbody><tr>
+       <td class="header"><b>Dvě kružnice</b></td>
+      </tr>
+     </tbody></table>
+    </div>
+   </div>
+  </center>
+ <form name="form1" method="post" action="?X=TaskU&amp;Cou=87&amp;Tgr=579&amp;Tsk=969" enctype="multipart/form-data">
+  <center>
+    <div class="topLayout">
+     <div class="outBox">
+      <table id="maintable" width="100%" cellspacing="0" cellpadding="2" border="0">
+       <colgroup><col width="200">
+       <col>
+       <col width="130">
+
+       </colgroup><tbody><tr>
+        <td class="ltCell" align="left"><b>Termín odevzdání:</b></td>
+        <td class="tCell" align="left"><b>03.11.2013 23:59:59</b></td>
+        <td class="rtCell" id="countdown" align="right">&nbsp;</td>
+       </tr>
+
+       <tr>
+        <td class="lCell" align="left"><b>Pozdní odevzdání s penalizací:</b></td>
+        <td class="rCell" colspan="2" align="left"><b>31.12.2013 23:59:59</b> (Penále za pozdní odevzdání: 100.0000 %)</td>
+       </tr>
+
+       <tr>
+        <td class="lCell" align="left"><b>Hodnocení:</b></td>
+        <td class="rCell" colspan="2" align="left"><b>5.5000</b></td>
+       </tr>
+       <tr>
+        <td class="lCell" align="left"><b>Max. hodnocení:</b></td>
+        <td class="rCell" colspan="2" align="left"><b>5.0000</b> (bez bonusů)</td>
+       </tr>
+       <tr>
+        <td class="lCell" align="left"><b>Odevzdaná řešení:</b></td>
+        <td class="rCell" colspan="2" align="left">1 /  20 Volné pokusy + 10 Penalizované pokusy (-10 % penalizace za každé odevzdání)</td>
+       </tr>
+
+       <tr>
+        <td class="lbCell" align="left"><b>Nápovědy:</b></td>
+        <td class="rbCell" colspan="2" align="left">0 / 2 Volné nápovědy + 2 Penalizované nápovědy (-10 % penalizace za každou nápovědu)</td>
+       </tr>
+
+       <tr>
+        <td class="lrtbCell" colspan="3" align="left"><p>Úkolem je napsat program, který rozhodne vzájemnou polohu 2 kružnic.</p>
+
+<p>Vstupem programu je zadání dvou kružnic. Každá kružnice je zadaná svým 
+středem (x a y souřadnice) a poloměrem. Čísla jsou zadaná v pořadí 
+<tt>x y r</tt>, jedná se o desetinná čísla.</p>
+
+<p>Výstupem programu je rozhodnutí o vzájemné poloze kružnic. Celkem může 
+nastat 6 variant vzájemné polohy:</p>
+<ul>
+ <li>kružnice splývají,</li>
+ <li>jedna kružnice leží zcela uvnitř druhé,</li>
+ <li>jedna kružnice se zevnitř dotýká druhé,</li>
+ <li>kružnice se protínají,</li>
+ <li>kružnice se dotýkají zvenku,</li>
+ <li>kružnice leží zcela mimo sebe.</li>
+</ul>
+
+<p>Program rozhodne o poloze a vypíše ji. Dále, pokud je to relevantní, 
+program vypíše plochu překryvu kružnic. Formát výstupu pro všech 6 variant 
+je uveden v ukázkovém běhu níže. Pozor, za výstupem je odřádkování (\n).</p>
+
+<p>Program musí být schopen detekovat nesprávný vstup. Pokud je na vstupu nesmyslné zadání,
+program to zjistí, vypíše chybové hlášení a ukončí se. Formát chybového 
+hlášení je uveden v ukázce níže. Pozor, za případným chybovým hlášením je odřádkování (\n).
+Chybové hlášení zasílejte na standardní výstup (<tt>printf</tt>), nezasílejte 
+jej na chybový výstup. Za chybu je považováno:</p>
+<ul>
+ <li>nečíselná hodnota nějaké souřadnice,</li>
+ <li>nečíselná hodnota poloměru,</li>
+ <li>poloměr nulový nebo záporný.</li>
+</ul>
+
+<p>Při programování si dejte pozor na přesnou podobu výpisů. Výstup Vašeho programu 
+kontroluje stroj, který požaduje přesnou shodu výstupů Vašeho programu s výstupy 
+referenčními. Za chybu je považováno, pokud se výpis liší. I chybějící nebo přebývající 
+mezera/odřádkování je považováno za chybu. Abyste tyto problémy rychle vyloučili, 
+použijte přiložený archiv se sadou vstupních a očekávaných výstupních dat. Podívejte 
+se na videotutoriál (edux -&gt; výuková videa), jak testovací data použít a jak 
+testování zautomatizovat.</p>
+
+<p>Váš program bude spouštěn v omezeném testovacím prostředí. Je omezen
+dobou běhu (limit je vidět v logu referenčního řešení) a dále je omezena i
+velikost dostupné paměti (ale tato úloha by ani s jedním omezením neměla mít
+problém). Testovací prostředí dále zakazuje používat některé "nebezpečné
+funkce" -- funkce pro spouštění programu, pro práci se sítí, ... Pokud jsou
+tyto funkce použité, program se nespustí. Možná ve svém programu používáte 
+volání:</p>
+
+<pre>int main ( int argc, char * argv [] )
+{
+ 
+  ...
+     
+  system ( "pause" ); /* aby se nezavrelo okno programu */
+  return 0;
+}
+</pre>
+
+<p>Toto nebude v testovacím prostředí fungovat - je zakázáno spouštění jiného
+programu. (I pokud by se program spustil, byl by odmítnut. Nebyl by 
+totiž nikdo, kdo by pauzu "odmáčkl", program by čekal věčně a překročil by
+tak maximální dobu běhu.) Pokud tedy chcete zachovat pauzu pro testování na
+Vašem počítači a zároveň chcete mít jistotu, že program poběží správně,    
+použijte následující trik:</p>
+
+<pre>int main ( int argc, char * argv [] )
+{
+ 
+  ...
+
+#ifndef __PROGTEST__
+  system ( "pause" ); /* toto progtest "nevidi" */
+#endif /* __PROGTEST__ */
+  return 0;
+} 
+</pre>
+
+<b>Ukázka práce programu:</b><br>
+<hr>
+<pre>Zadejte parametry kruznice #1:
+0 0 5
+Zadejte parametry kruznice #2:
+0 10 5
+Vnejsi dotyk, zadny prekryv.
+</pre>
+<hr>
+<pre>Zadejte parametry kruznice #1:
+0 0 3
+Zadejte parametry kruznice #2:
+1.5 1.5 0.8
+Kruznice #2 lezi uvnitr kruznice #1, prekryv: 2.010619
+</pre>
+<hr>
+<pre>Zadejte parametry kruznice #1:
+0 0 4
+Zadejte parametry kruznice #2:
+2 0 2
+Vnitrni dotyk, kruznice #2 lezi uvnitr kruznice #1, prekryv: 12.566371
+</pre>
+<hr>
+<pre>Zadejte parametry kruznice #1:
+0 0 5
+Zadejte parametry kruznice #2:
+100 100 10
+Kruznice lezi vne sebe, zadny prekryv.
+</pre>
+<hr>
+<pre>Zadejte parametry kruznice #1:
+0 0 4.5
+Zadejte parametry kruznice #2:
+10 10 15
+Kruznice se protinaji, prekryv: 37.475800
+</pre>
+<hr>
+<pre>Zadejte parametry kruznice #1:
+-10.25 -20.5 4
+Zadejte parametry kruznice #2:
+-10.25 -20.5 4
+Kruznice splyvaji, prekryv: 50.265482
+</pre>
+<hr>
+<pre>Zadejte parametry kruznice #1:
+0 0 -2
+Nespravny vstup.
+</pre>
+<hr>
+<pre>Zadejte parametry kruznice #1:
+0 12 5
+Zadejte parametry kruznice #2:
+3 7 abc
+Nespravny vstup.
+</pre>
+<hr>
+<b>Poznámky:</b>
+<ul>
+ <li>Pro uložení desetinných čísel používejte datový typ <tt>double</tt>. 
+  Datový typ <tt>float</tt> nepoužívejte, má malou přesnost.</li>
+ <li>Vypočtená plocha překryvu by měla být stejná jako referenční. Při porovnávání 
+  je ale tolerována malá číselná odchylka menší než 0.1 promile.</li>
+</ul>
+
+</td>
+       </tr>
+
+
+       <tr>
+        <td class="ltbCell" colspan="2" align="left"><b>Vzorová data:</b></td>
+        <td class="rtbCell" align="center"><div class="but1 w120"><div class="but2"><a class="butLink" href="https://progtest.fit.cvut.cz/index.php?X=TaskS&amp;Cou=87&amp;Tgr=579&amp;Tsk=969">Download</a></div></div></td>
+       </tr>
+
+
+
+
+
+
+
+
+
+
+
+      </tbody></table>
+     </div>
+    </div>
+
+
+ <br>
+ <div class="topLayout">
+  <div class="outBox">
+   <table id="reftable" width="100%" cellspacing="0" cellpadding="2" border="0">
+   <tbody><tr>
+    <td class="ltbSepCell" align="left"><input name="SHOW_REF" onchange="showRefSolution()" type="checkbox">&nbsp;<b>Referenční řešení</b></td>
+    <td class="rtbSepCell" align="right">&nbsp;</td>
+   </tr>
+   <tr style="display: none;">
+    <td class="lrtbCell" colspan="2" align="left"><ul><li><b>Hodnotitel: automat</b><ul><li>Program zkompilován</li><li>Test 'Základní test s parametry podle ukázky': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Max doba běhu: 0.005 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.038 s</li><li>Využití paměti: 11720 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test mezních hodnot': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.005 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.086 s</li><li>Využití paměti: 11720 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Kontrola ošetření nesprávných vstupů': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.005 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.049 s</li><li>Využití paměti: 11720 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test náhodnými hodnotami': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.005 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.118 s</li><li>Využití paměti: 11720 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Celkové hodnocení: 100.00 % (= 1.00 * 1.00 * 1.00 * 1.00)</li></ul></li><li>Celkové procentní hodnocení: 100.00 %</li><li>Bonus za včasné odevzdání: 0.50</li><li>Celkem bodů: 1.00 * ( 5.00 + 0.50 ) = 5.50</li></ul></td>
+   </tr>
+    <tr style="display: none;">
+  <td class="ltbCell" align="left"><b>SW metriky:</b></td>
+  <td class="rtbCell" colspan="2" align="left">
+   <table cellpadding="2" border="0">
+    <tbody><tr>
+     <td>&nbsp;</td>
+     <td class="ac">Celkem</td>
+     <td class="ac">Průměr</td>
+     <td class="ac">Maximum</td>
+     <td>Jméno funkce</td>
+    </tr>
+    <tr>
+     <td>Funkce:</td>
+     <td class="ar"><b>3</b></td>
+     <td class="ar">--</td>
+     <td class="ar">--</td>
+     <td>--</td>
+    </tr>
+    <tr>
+     <td>Řádek kódu:</td>
+     <td class="ar"><b>87</b></td>
+     <td class="ar"><span class="textOk">29.00 ± 18.06</span></td>
+     <td class="ar"><span class="textWarn">54</span></td>
+     <td><tt>main(...)</tt></td>
+    </tr>
+    <tr>
+     <td>Cyklomatická složitost:</td>
+     <td class="ar"><b>27</b></td>
+     <td class="ar"><span class="textOk">9.00 ± 5.72</span></td>
+     <td class="ar"><span class="textOk">17</span></td>
+     <td><tt>main(...)</tt></td>
+    </tr>
+   </tbody></table>
+  </td>
+ </tr>
+   </tbody></table>
+  </div>
+ </div>
+
+
+
+
+ <br>
+ <div class="topLayout">
+  <div class="outBox">
+   <table id="maintable" width="100%" cellspacing="0" cellpadding="2" border="0">
+    <colgroup><col width="200">
+    <col>
+    <col width="130">
+
+   </colgroup><tbody><tr>
+    <td class="ltbOkSepCell" align="left"><b>1</b></td>
+    
+    
+   </tr>
+   <tr>
+    <td class="ltCell" align="left"><b>Stav odevzdání:</b></td>
+    <td class="tCell" align="left">Ohodnoceno</td>
+
+
+
+    <td class="rtbCell" rowspan="2">&nbsp;</td>
+
+
+   </tr>
+
+   <tr>
+    <td class="lbCell" align="left"><b>Hodnocení:</b></td>
+    <td class="bCell" align="left">5.5000</td>
+   </tr>   <tr>
+    <td class="lrtbCell" colspan="3" align="left"><ul><li><b>Hodnotitel: automat</b><ul><li>Program zkompilován</li><li>Test 'Základní test s parametry podle ukázky': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Max doba běhu: 0.005 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.041 s</li><li>Využití paměti: 11720 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test mezních hodnot': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.005 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.098 s</li><li>Využití paměti: 11720 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Kontrola ošetření nesprávných vstupů': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.005 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.050 s</li><li>Využití paměti: 11720 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test náhodnými hodnotami': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.005 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.125 s</li><li>Využití paměti: 11720 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Celkové hodnocení: 100.00 % (= 1.00 * 1.00 * 1.00 * 1.00)</li></ul></li><li>Použité nápovědy: 2</li><li>Penalizace za vyčerpané nápovědy: Není (2 &lt;= 2 limit)</li><li>Celkové procentní hodnocení: 100.00 %</li><li>Bonus za včasné odevzdání: 0.50</li><li>Celkem bodů: 1.00 * ( 5.00 + 0.50 ) = 5.50</li></ul></td>
+   </tr> <tr>
+  <td class="ltbCell" align="left"><b>SW metriky:</b></td>
+  <td class="rtbCell" colspan="2" align="left">
+   <table cellpadding="2" border="0">
+    <tbody><tr>
+     <td>&nbsp;</td>
+     <td class="ac">Celkem</td>
+     <td class="ac">Průměr</td>
+     <td class="ac">Maximum</td>
+     <td>Jméno funkce</td>
+    </tr>
+    <tr>
+     <td>Funkce:</td>
+     <td class="ar"><b>4</b></td>
+     <td class="ar">--</td>
+     <td class="ar">--</td>
+     <td>--</td>
+    </tr>
+    <tr>
+     <td>Řádek kódu:</td>
+     <td class="ar"><b>96</b></td>
+     <td class="ar"><span class="textOk">24.00 ± 29.08</span></td>
+     <td class="ar"><span class="textWarn">74</span></td>
+     <td><tt>main(...)</tt></td>
+    </tr>
+    <tr>
+     <td>Cyklomatická složitost:</td>
+     <td class="ar"><b>31</b></td>
+     <td class="ar"><span class="textOk">7.75 ± 10.57</span></td>
+     <td class="ar"><span class="textWarn">26</span></td>
+     <td><tt>main(...)</tt></td>
+    </tr>
+   </tbody></table>
+  </td>
+ </tr>   </tbody></table>
+  </div>
+ </div> <br>
+  
+  
+  
+  
+  
+ 
+  </center>
+ </form>
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+<!--
+
+var deadLine = new Date ( 1383519599 * 1000 );
+
+function CBpressed ( num )
+ {
+   var pre, cb;
+
+   cb = MM_findObj ( "cb_" + num );
+   pre = MM_findObj ( "pre_" + num );
+   if ( cb != null && pre != null )
+    {
+      pre . style . display = cb . checked ? "block" : "none";
+    }
+ }
+
+function unlockAdvice ( url )
+ {
+   if ( confirm ( 'Máte k dispozici pouze omezený počet nápověd. Navíc, použití nápovědy může snížit bodové hodnocení. Opravdu chcete zpřístupnit tuto nápovědu?' ) )
+    this . location = url;
+ }
+
+function setCountdown ( )
+ {
+   var d = new Date ();
+   var x = ( deadLine . getTime () - d . getTime () );
+   var tgt = document . getElementById ( "countdown" );
+
+   if ( x > 0 )
+    {
+      var s = Math . floor ( x / 1000 );
+      var ms = (x % 1000) + "";
+
+      while ( ms . length  < 3 ) ms = "0" + ms;
+
+      tgt . innerHTML = s + "." + ms + " sec";
+
+      window . setTimeout ( setCountdown, 117 );
+    }
+   else
+    {
+      tgt . innerHTML = '&nbsp;';
+    }
+ }
+
+function showRefSolution ( )
+ {
+   var t = document . getElementById ( "reftable" );
+   var x = document . getElementsByName ( "SHOW_REF" )[0];
+
+   if ( ! x ) return;
+   var r1 = t . rows[1], r2 = t . rows[2];
+
+   if ( x . checked )
+    {
+      r1 . style . display = "";
+      if ( r2 ) r2 . style . display = "";
+    }
+   else
+    {
+      r1 . style . display = "none";
+      if ( r2 ) r2 . style . display = "none";
+    }
+ }
+
+
+setCountdown ();
+showRefSolution ();
+
+// -->
+</script>
+
+
+
+
+
+ 
+
+
+</body></html>
+<!-- Template run time: 0.15945601463318 sec -->

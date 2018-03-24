@@ -1,0 +1,535 @@
+<!--?xml version="1.0" encoding="utf-8" ?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml-transitional.dtd">
+<html><head>
+  <title>holoumar@progtest.fit.cvut.cz - ProgTest</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="assignment_files/css.css" rel="stylesheet" type="text/css">
+  <script src="assignment_files/shared.js" language="JavaScript" type="text/javascript"></script>
+  
+ </head>
+ <body text="#000000" bgcolor="#828273">
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+   <tbody><tr height="25">
+    <td bgcolor="#00ff00" align="left"><span class="navLink"><a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Main">ProgTest</a>&nbsp;&nbsp;►&nbsp;&nbsp;<a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Course&amp;Cou=87">BI-PA1 (13/14 ZS)</a>&nbsp;&nbsp;►&nbsp;&nbsp;<a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=TaskGrp&amp;Cou=87&amp;Tgr=583">Domácí úloha 05</a>&nbsp;&nbsp;►&nbsp;&nbsp;<b>Dělení matice</b></span></td>
+    <td bgcolor="#00ff00" align="right"><a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Logout">Logout</a></td>
+   </tr>
+  </tbody></table>
+<br>
+
+
+
+
+ <br>
+ <br>
+   <center>
+   <div class="topLayout">
+    <div class="outBox">
+     <table class="header" width="100%" cellspacing="0" cellpadding="0">
+      <tbody><tr>
+       <td class="header"><b>Dělení matice</b></td>
+      </tr>
+     </tbody></table>
+    </div>
+   </div>
+  </center>
+ <form name="form1" method="post" action="?X=TaskU&amp;Cou=87&amp;Tgr=583&amp;Tsk=982" enctype="multipart/form-data">
+  <center>
+    <div class="topLayout">
+     <div class="outBox">
+      <table id="maintable" width="100%" cellspacing="0" cellpadding="2" border="0">
+       <colgroup><col width="200">
+       <col>
+       <col width="130">
+
+       </colgroup><tbody><tr>
+        <td class="ltCell" align="left"><b>Termín odevzdání:</b></td>
+        <td class="tCell" align="left"><b>01.12.2013 23:59:59</b></td>
+        <td class="rtCell" id="countdown" align="right">&nbsp;</td>
+       </tr>
+
+       <tr>
+        <td class="lCell" align="left"><b>Hodnocení:</b></td>
+        <td class="rCell" colspan="2" align="left"><b>6.6000</b></td>
+       </tr>
+       <tr>
+        <td class="lCell" align="left"><b>Max. hodnocení:</b></td>
+        <td class="rCell" colspan="2" align="left"><b>5.0000</b> (bez bonusů)</td>
+       </tr>
+       <tr>
+        <td class="lCell" align="left"><b>Odevzdaná řešení:</b></td>
+        <td class="rCell" colspan="2" align="left">1 /  20 Volné pokusy + 10 Penalizované pokusy (-10 % penalizace za každé odevzdání)</td>
+       </tr>
+
+       <tr>
+        <td class="lbCell" align="left"><b>Nápovědy:</b></td>
+        <td class="rbCell" colspan="2" align="left">0 / 2 Volné nápovědy + 2 Penalizované nápovědy (-10 % penalizace za každou nápovědu)</td>
+       </tr>
+
+       <tr>
+        <td class="lrtbCell" colspan="3" align="left"><p>Úkolem je napsat program, který dokáže rozdělit matici na dvě 
+co nejpodobnější části.</p>
+
+<p>Vstupem programu je matice obsahující celá kladná čísla. Velikost 
+matice je omezena pouze velikostí dostupné paměti. Program tuto 
+matici načte a najde v ní podmatici (obdélníkový výřez) tak, aby
+součet prvků v tomto výřezu a součet prvků mimo výřez byl stejný 
+(případně aby tyto součty byly co nejbližší). Takových podmatic 
+může být samozřejmě více stejně vhodných. Výstupem program je 
+výpis nalezených podmatic. Na obrázku je uveden příklad nalezených 
+podmatic:</p>
+
+<img src="assignment_files/index.png">
+
+<p>Vstupem program je zadání matice celých kladných čísel. Matice 
+je zadaná po řádcích, každá řádka matice je jednou řádkou vstupu. 
+Čísla na řádce jsou oddělena čárkami, za posledním číslem na řádce 
+je odřádkování (\n). Zadání matice končí za poslední řádkou vstupu 
+(aktivní konec souboru - EOF).</p>
+
+<p>Výstupem program je seznam nalezených podmatic. Každá nalezená 
+podmatice je vypsaná na zvláštním řádku, řádek má tvar:</p>
+
+<pre>W x H @ (X, Y): IN : OUT
+</pre>
+
+<dl>
+ <dt>W</dt><dd>je šířka (počet sloupců) nalezené podmatice,</dd>
+ <dt>H</dt><dd>je výška (počet řádek) nalezené podmatice,</dd>
+ <dt>X</dt><dd>je x-souřadnice (sloupec) levého horního rohu 
+   nalezené podmatice v původní matici. Souřadnice počítáme počínaje 0,</dd>
+ <dt>Y</dt><dd>je y-souřadnice (řádka) levého horního rohu 
+   nalezené podmatice v původní matici. Souřadnice počítáme počínaje 0,</dd>
+ <dt>IN</dt><dd>je součet prvků uvnitř nalezené podmatice,</dd>
+ <dt>OUT</dt><dd>je součet prvků vně nalezené podmatice.</dd>
+</dl> 
+
+<p>Program musí ošetřovat správnost vstupních dat. Pokud jsou na vstupu 
+nesprávná data, program to detekuje, vypíše chybové hlášení a ukončí se. 
+Za chybu je považováno:</p>
+<ul>
+ <li>nečíselná, záporná nebo nulová hodnota prvku matice,</li>
+ <li>chybějící nebo přebývající oddělovače čísel na řádce,</li>
+ <li>oddělovače jiné než čárka,</li>
+ <li>jiný než obdélníkový tvar matice,</li>
+ <li>matice s méně než dvěma prvky (matici velikosti 1x1 nelze 
+    rozdělit, proto musí být vstup alespoň v jednom směru větší než 1).</li>
+</ul>
+ 
+<p>Váš program bude spouštěn v omezeném testovacím prostředí. Je omezen
+dobou běhu (limit je vidět v logu referenčního řešení) a dále je omezena i
+velikost dostupné paměti. Testovací prostředí dále zakazuje používat některé
+"nebezpečné funkce" -- funkce pro spouštění programu, pro práci se sítí, ...
+Pokud jsou tyto funkce použité, program se nespustí.</p>
+
+<p>V závislosti na zvoleném algoritmu může být úloha výpočetně náročnější.
+Pro tuto úlohu existuje celá řada algoritmů od jednoduchých po pokročilé, které 
+mohou pro větší vstupní data pracovat až o několik řádů rychleji. Naivní řešení 
+vypočte výsledek v čase <tt>O(n<sup>6</sup>)</tt>, kde <tt>n</tt> je velikost 
+matice (šířka / výška, předpokládáme-li čtvercovou matici). Rozumná implementace 
+naivního algoritmu projde všemi závaznými testy. Neprojde však nepovinnými a 
+bonusovými testy, tedy bude hodnocena méně než 100% bodů. Při volbě pokročilejšího 
+algoritmu lze dosáhnout lepších výsledků a časově zvládnout nepovinné testy 
+(zisk 100% bodů) či dokonce bonusové testy (zisk nad 100% bodů). Nepovinné a 
+bonusové testy postupně zvětšují velikosti testovaných matic.</p>
+
+<b>Ukázka práce programu:</b>
+<hr>
+<pre>Zadejte matici:
+1, 5, 6, 8
+2, 7, 2, 5
+3, 6, 2, 5
+1, 9, 8, 12
+8, 4, 2, 5
+Vysledku: 1
+2 x 5 @ (1, 0): 51 : 50
+</pre>
+<hr>
+<pre>Zadejte matici:
+1, 2, 2, 1, 1
+1, 2, 2, 2, 1
+1, 2, 2, 2, 1
+1, 2, 2, 2, 1
+Vysledku: 8
+3 x 3 @ (0, 0): 15 : 16
+3 x 3 @ (0, 1): 15 : 16
+5 x 2 @ (0, 0): 15 : 16
+5 x 2 @ (0, 1): 16 : 15
+5 x 2 @ (0, 2): 16 : 15
+2 x 4 @ (1, 0): 16 : 15
+2 x 4 @ (2, 0): 15 : 16
+3 x 3 @ (2, 1): 15 : 16
+</pre>
+<hr>
+<pre>Zadejte matici:
+1, 2, 3, 4
+2, 3, 4, 1
+3, 4, 1, 2
+4, 1, 2, 3
+Vysledku: 6
+2 x 4 @ (0, 0): 20 : 20
+4 x 2 @ (0, 0): 20 : 20
+4 x 2 @ (0, 1): 20 : 20
+4 x 2 @ (0, 2): 20 : 20
+2 x 4 @ (1, 0): 20 : 20
+2 x 4 @ (2, 0): 20 : 20
+</pre>
+<hr>
+<pre>Zadejte matici:
+1, 3, 5, 7, 9, 11, 13, 15, 17
+Vysledku: 1
+4 x 1 @ (3, 0): 40 : 41
+</pre>
+<hr>
+<pre>Zadejte matici:
+1204
+207
+1336
+417
+511
+Vysledku: 1
+1 x 2 @ (0, 2): 1753 : 1922
+</pre>
+<hr>
+<pre>Zadejte matici:
+1, 1
+2, 3, 4
+Nespravny vstup.
+</pre>
+<hr>
+<pre>Zadejte matici:
+1, 1, 0
+2, 3, 4
+Nespravny vstup.
+</pre>
+<hr>
+<pre>Zadejte matici:
+1, 1, 3
+2, 3, abcd
+Nespravny vstup.
+</pre>
+<hr>
+<b>Poznámky:</b><br>
+<ul> 
+ <li>Nenačítejte vstupní řádky jako řetězce. Pro načtení vstupu lze vystačit s funkcí 
+    <tt>scanf</tt>, použití řetězců načítání spíše ztíží.</li>
+
+ <li>Pro reprezentaci matice si budete muset alokovat prostor dynamicky.</li>
+
+ <li>Velikost matice není známá dopředu. Paměť pro prvky budete muset alokovat 
+    postupně a budete muset alokovanou paměť postupně zvětšovat. Hodí se k tomu funkce 
+    <tt>realloc</tt>.</li>
+
+ <li>Při alokaci nemíchejte C funkce (<tt>malloc</tt>, <tt>realloc</tt>, <tt>free</tt>) a 
+    C++ operátory pro alokaci (<tt>new</tt>, <tt>delete</tt>). Míchání C a C++ stylu 
+    není rozumné, při testování takový program nejspíše spadne.</li>
+
+ <li>Nepoužívejte C++ knihovnu STL (<tt>vector</tt>, <tt>list</tt>, ...). Účelem je procvičit 
+    dynamickou alokaci paměti v C. STL budete používat v předmětu PA2, v PA1 je použití STL 
+    zakázané. Pokud přesto STL použijete, Váš program nepůjde přeložit.</li>
+
+ <li>V jednom z testů se kontrolují přístupy do paměti a kontroluje se uvolňování dynamicky 
+    alokované paměti. Pokud dynamicky alokovanou paměť neuvolníte, bude Váš výsledek zatížen 
+    bodovým malusem.</li>
+
+ <li>Pořadí nalezených podmatic na výstupu není podstatné. Při porovnání výsledků si testovací 
+    prostředí v případě potřeby řádky prohází. Tedy například pro druhý ukázkový běh může 
+    být pořadí následující:
+<pre>...
+3 x 3 @ (0, 0): 15 : 16
+3 x 3 @ (0, 1): 15 : 16
+5 x 2 @ (0, 0): 15 : 16
+5 x 2 @ (0, 1): 16 : 15
+5 x 2 @ (0, 2): 16 : 15
+2 x 4 @ (1, 0): 16 : 15
+2 x 4 @ (2, 0): 15 : 16
+3 x 3 @ (2, 1): 15 : 16
+</pre>
+<hr>
+<pre>...
+2 x 4 @ (1, 0): 16 : 15
+2 x 4 @ (2, 0): 15 : 16
+3 x 3 @ (2, 1): 15 : 16
+3 x 3 @ (0, 0): 15 : 16
+3 x 3 @ (0, 1): 15 : 16
+5 x 2 @ (0, 0): 15 : 16
+5 x 2 @ (0, 1): 16 : 15
+5 x 2 @ (0, 2): 16 : 15
+</pre>
+<hr>
+<pre>...
+2 x 4 @ (1, 0): 16 : 15
+2 x 4 @ (2, 0): 15 : 16
+3 x 3 @ (2, 1): 15 : 16
+5 x 2 @ (0, 0): 15 : 16
+5 x 2 @ (0, 1): 16 : 15
+5 x 2 @ (0, 2): 16 : 15
+3 x 3 @ (0, 0): 15 : 16
+3 x 3 @ (0, 1): 15 : 16
+</pre>
+
+nebo libovolná jiná ze zbývajících 40317 permutací.</li>
+
+</ul>
+</td>
+       </tr>
+
+
+       <tr>
+        <td class="ltbCell" colspan="2" align="left"><b>Vzorová data:</b></td>
+        <td class="rtbCell" align="center"><div class="but1 w120"><div class="but2"><a class="butLink" href="https://progtest.fit.cvut.cz/index.php?X=TaskS&amp;Cou=87&amp;Tgr=583&amp;Tsk=982">Download</a></div></div></td>
+       </tr>
+
+
+
+
+
+
+
+
+
+
+
+      </tbody></table>
+     </div>
+    </div>
+
+
+ <br>
+ <div class="topLayout">
+  <div class="outBox">
+   <table id="reftable" width="100%" cellspacing="0" cellpadding="2" border="0">
+   <tbody><tr>
+    <td class="ltbSepCell" align="left"><input name="SHOW_REF" onchange="showRefSolution()" type="checkbox">&nbsp;<b>Referenční řešení</b></td>
+    <td class="rtbSepCell" align="right">&nbsp;</td>
+   </tr>
+   <tr style="display: none;">
+    <td class="lrtbCell" colspan="2" align="left"><ul><li><b>Hodnotitel: automat</b><ul><li>Program zkompilován</li><li>Test 'Základní test s parametry podle ukázky': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Max doba běhu: 0.005 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.040 s</li><li>Využití paměti: 11724 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test mezních hodnot': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.007 s (limit: 4.000 s)</li><li>Celková doba běhu: 0.065 s</li><li>Využití paměti: 11724 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test ošetření nesprávných vstupů': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.005 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.045 s</li><li>Využití paměti: 11724 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test náhodnými daty': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.006 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.053 s</li><li>Využití paměti: 11724 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test náhodnými daty + test práce s pamětí': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.043 s (limit: 3.000 s)</li><li>Celková doba běhu: 0.091 s</li><li>Využití paměti: 18848 KiB (limit: 29366 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test rychlosti I (nepovinný)': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 80.00 %</li><li>Max doba běhu: 0.010 s (limit: 5.000 s)</li><li>Celková doba běhu: 0.026 s</li><li>Využití paměti: 11724 KiB (limit: 21173 KiB)</li><li>Úspěch v nepovinném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test rychlosti II (bonus)': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Max doba běhu: 0.025 s (limit: 5.000 s)</li><li>Celková doba běhu: 0.052 s</li><li>Využití paměti: 11724 KiB (limit: 21173 KiB)</li><li>Úspěch v bonusovém testu, hodnocení: 120.00 %</li></ul></li>
+<li>Test 'Test rychlosti III (bonus)': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Max doba běhu: 0.501 s (limit: 5.000 s)</li><li>Celková doba běhu: 0.879 s</li><li>Využití paměti: 12512 KiB (limit: 21173 KiB)</li><li>Úspěch v bonusovém testu, hodnocení: 130.00 %</li></ul></li>
+<li>Všechny paměťové bloky byly uvolněné - ok.</li><li>Celkové hodnocení: 156.00 % (= 1.00 * 1.00 * 1.00 * 1.00 * 1.00 * 1.00 * 1.20 * 1.30)</li></ul></li><li>Celkové procentní hodnocení: 156.00 %</li><li>Bonus za včasné odevzdání: 0.50</li><li>Celkem bodů: 1.56 * ( 5.00 + 0.50 ) = 8.58</li></ul></td>
+   </tr>
+    <tr style="display: none;">
+  <td class="ltbCell" align="left"><b>SW metriky:</b></td>
+  <td class="rtbCell" colspan="2" align="left">
+   <table cellpadding="2" border="0">
+    <tbody><tr>
+     <td>&nbsp;</td>
+     <td class="ac">Celkem</td>
+     <td class="ac">Průměr</td>
+     <td class="ac">Maximum</td>
+     <td>Jméno funkce</td>
+    </tr>
+    <tr>
+     <td>Funkce:</td>
+     <td class="ar"><b>10</b></td>
+     <td class="ar">--</td>
+     <td class="ar">--</td>
+     <td>--</td>
+    </tr>
+    <tr>
+     <td>Řádek kódu:</td>
+     <td class="ar"><b>284</b></td>
+     <td class="ar"><span class="textOk">28.40 ± 10.88</span></td>
+     <td class="ar"><span class="textOk">45</span></td>
+     <td><tt>searchLinear1(int *,int,int,int,int,TMat **,int *,int *,int *)</tt></td>
+    </tr>
+    <tr>
+     <td>Cyklomatická složitost:</td>
+     <td class="ar"><b>72</b></td>
+     <td class="ar"><span class="textOk">7.20 ± 3.09</span></td>
+     <td class="ar"><span class="textOk">13</span></td>
+     <td><tt>readRow(int **,int *)</tt></td>
+    </tr>
+   </tbody></table>
+  </td>
+ </tr>
+   </tbody></table>
+  </div>
+ </div>
+
+
+
+
+ <br>
+ <div class="topLayout">
+  <div class="outBox">
+   <table id="maintable" width="100%" cellspacing="0" cellpadding="2" border="0">
+    <colgroup><col width="200">
+    <col>
+    <col width="130">
+
+   </colgroup><tbody><tr>
+    <td class="ltbOkSepCell" align="left"><b>1</b></td>
+    
+    
+   </tr>
+   <tr>
+    <td class="ltCell" align="left"><b>Stav odevzdání:</b></td>
+    <td class="tCell" align="left">Ohodnoceno</td>
+
+
+
+    <td class="rtbCell" rowspan="2">&nbsp;</td>
+
+
+   </tr>
+
+   <tr>
+    <td class="lbCell" align="left"><b>Hodnocení:</b></td>
+    <td class="bCell" align="left">6.6000</td>
+   </tr>   <tr>
+    <td class="lrtbCell" colspan="3" align="left"><ul><li><b>Hodnotitel: automat</b><ul><li>Program zkompilován</li><li>Test 'Základní test s parametry podle ukázky': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Max doba běhu: 0.005 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.040 s</li><li>Využití paměti: 11724 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test mezních hodnot': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.467 s (limit: 4.000 s)</li><li>Celková doba běhu: 0.831 s</li><li>Využití paměti: 11724 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test ošetření nesprávných vstupů': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.005 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.045 s</li><li>Využití paměti: 11724 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test náhodnými daty': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.017 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.081 s</li><li>Využití paměti: 11724 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test náhodnými daty + test práce s pamětí': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.101 s (limit: 3.000 s)</li><li>Celková doba běhu: 0.181 s</li><li>Využití paměti: 19240 KiB (limit: 29366 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test rychlosti I (nepovinný)': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 80.00 %</li><li>Max doba běhu: 0.231 s (limit: 5.000 s)</li><li>Celková doba běhu: 0.476 s</li><li>Využití paměti: 11724 KiB (limit: 21173 KiB)</li><li>Úspěch v nepovinném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test rychlosti II (bonus)': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Max doba běhu: 1.673 s (limit: 5.000 s)</li><li>Celková doba běhu: 2.813 s</li><li>Využití paměti: 11724 KiB (limit: 21173 KiB)</li><li>Úspěch v bonusovém testu, hodnocení: 120.00 %</li></ul></li>
+<li>Test 'Test rychlosti III (bonus)': Program překročil přidělenou maximální dobu běhu<ul><li>Program násilně ukončen po: 5.003 s (limit: 5.000 s)</li><li>Neúspěch v bonusovém testu, hodnocení: Bonus nebude udělen</li><li>Překročení doby běhu <a href="javascript:%20unlockAdvice('?X=Unlock&amp;Cou=87&amp;Tgr=583&amp;Tsk=982&amp;Unl=L877483')">[Zpřístupnit nápovědu (32.00 KiB)]</a></li></ul></li>
+<li>Celkové hodnocení: 120.00 % (= 1.00 * 1.00 * 1.00 * 1.00 * 1.00 * 1.00 * 1.20)</li></ul></li><li>Použité nápovědy: 2</li><li>Penalizace za vyčerpané nápovědy: Není (2 &lt;= 2 limit)</li><li>Celkové procentní hodnocení: 120.00 %</li><li>Bonus za včasné odevzdání: 0.50</li><li>Celkem bodů: 1.20 * ( 5.00 + 0.50 ) = 6.60</li></ul></td>
+   </tr> <tr>
+  <td class="ltbCell" align="left"><b>SW metriky:</b></td>
+  <td class="rtbCell" colspan="2" align="left">
+   <table cellpadding="2" border="0">
+    <tbody><tr>
+     <td>&nbsp;</td>
+     <td class="ac">Celkem</td>
+     <td class="ac">Průměr</td>
+     <td class="ac">Maximum</td>
+     <td>Jméno funkce</td>
+    </tr>
+    <tr>
+     <td>Funkce:</td>
+     <td class="ar"><b>10</b></td>
+     <td class="ar">--</td>
+     <td class="ar">--</td>
+     <td>--</td>
+    </tr>
+    <tr>
+     <td>Řádek kódu:</td>
+     <td class="ar"><b>259</b></td>
+     <td class="ar"><span class="textOk">25.90 ± 23.57</span></td>
+     <td class="ar"><span class="textWarn">87</span></td>
+     <td><tt>LoadFromSTDIN(int ***,int *,int *)</tt></td>
+    </tr>
+    <tr>
+     <td>Cyklomatická složitost:</td>
+     <td class="ar"><b>65</b></td>
+     <td class="ar"><span class="textOk">6.50 ± 7.79</span></td>
+     <td class="ar"><span class="textWarn">27</span></td>
+     <td><tt>LoadFromSTDIN(int ***,int *,int *)</tt></td>
+    </tr>
+   </tbody></table>
+  </td>
+ </tr>   </tbody></table>
+  </div>
+ </div> <br>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+  </center>
+ </form>
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+<!--
+
+var deadLine = new Date ( 1385938799 * 1000 );
+
+function CBpressed ( num )
+ {
+   var pre, cb;
+
+   cb = MM_findObj ( "cb_" + num );
+   pre = MM_findObj ( "pre_" + num );
+   if ( cb != null && pre != null )
+    {
+      pre . style . display = cb . checked ? "block" : "none";
+    }
+ }
+
+function unlockAdvice ( url )
+ {
+   if ( confirm ( 'Máte k dispozici pouze omezený počet nápověd. Navíc, použití nápovědy může snížit bodové hodnocení. Opravdu chcete zpřístupnit tuto nápovědu?' ) )
+    this . location = url;
+ }
+
+function setCountdown ( )
+ {
+   var d = new Date ();
+   var x = ( deadLine . getTime () - d . getTime () );
+   var tgt = document . getElementById ( "countdown" );
+
+   if ( x > 0 )
+    {
+      var s = Math . floor ( x / 1000 );
+      var ms = (x % 1000) + "";
+
+      while ( ms . length  < 3 ) ms = "0" + ms;
+
+      tgt . innerHTML = s + "." + ms + " sec";
+
+      window . setTimeout ( setCountdown, 117 );
+    }
+   else
+    {
+      tgt . innerHTML = '&nbsp;';
+    }
+ }
+
+function showRefSolution ( )
+ {
+   var t = document . getElementById ( "reftable" );
+   var x = document . getElementsByName ( "SHOW_REF" )[0];
+
+   if ( ! x ) return;
+   var r1 = t . rows[1], r2 = t . rows[2];
+
+   if ( x . checked )
+    {
+      r1 . style . display = "";
+      if ( r2 ) r2 . style . display = "";
+    }
+   else
+    {
+      r1 . style . display = "none";
+      if ( r2 ) r2 . style . display = "none";
+    }
+ }
+
+
+setCountdown ();
+showRefSolution ();
+
+// -->
+</script>
+
+
+
+
+
+ 
+
+
+</body></html>
+<!-- Template run time: 0.079606056213379 sec -->

@@ -1,0 +1,529 @@
+<!--?xml version="1.0" encoding="utf-8" ?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml-transitional.dtd">
+<html><head>
+  <title>holoumar@progtest.fit.cvut.cz - ProgTest</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="assignment_files/css.css" rel="stylesheet" type="text/css">
+  <script src="assignment_files/shared.js" language="JavaScript" type="text/javascript"></script>
+  
+ </head>
+ <body text="#000000" bgcolor="#828273">
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+   <tbody><tr height="25">
+    <td bgcolor="#00ff00" align="left"><span class="navLink"><a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Main">ProgTest</a>&nbsp;&nbsp;►&nbsp;&nbsp;<a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Course&amp;Cou=87">BI-PA1 (13/14 ZS)</a>&nbsp;&nbsp;►&nbsp;&nbsp;<a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=TaskGrp&amp;Cou=87&amp;Tgr=585">Domácí úloha 07</a>&nbsp;&nbsp;►&nbsp;&nbsp;<b>Vyvažování nákladu</b></span></td>
+    <td bgcolor="#00ff00" align="right"><a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Logout">Logout</a></td>
+   </tr>
+  </tbody></table>
+<br>
+
+
+
+
+ <br>
+ <br>
+   <center>
+   <div class="topLayout">
+    <div class="outBox">
+     <table class="header" width="100%" cellspacing="0" cellpadding="0">
+      <tbody><tr>
+       <td class="header"><b>Vyvažování nákladu</b></td>
+      </tr>
+     </tbody></table>
+    </div>
+   </div>
+  </center>
+ <form name="form1" method="post" action="?X=TaskU&amp;Cou=87&amp;Tgr=585&amp;Tsk=992" enctype="multipart/form-data">
+  <center>
+    <div class="topLayout">
+     <div class="outBox">
+      <table id="maintable" width="100%" cellspacing="0" cellpadding="2" border="0">
+       <colgroup><col width="200">
+       <col>
+       <col width="130">
+
+       </colgroup><tbody><tr>
+        <td class="ltCell" align="left"><b>Termín odevzdání:</b></td>
+        <td class="tCell" align="left"><b>15.12.2013 23:59:59</b></td>
+        <td class="rtCell" id="countdown" align="right">&nbsp;</td>
+       </tr>
+
+       <tr>
+        <td class="lCell" align="left"><b>Hodnocení:</b></td>
+        <td class="rCell" colspan="2" align="left"><b>5.5000</b></td>
+       </tr>
+       <tr>
+        <td class="lCell" align="left"><b>Max. hodnocení:</b></td>
+        <td class="rCell" colspan="2" align="left"><b>5.0000</b> (bez bonusů)</td>
+       </tr>
+       <tr>
+        <td class="lCell" align="left"><b>Odevzdaná řešení:</b></td>
+        <td class="rCell" colspan="2" align="left">1 /  20 Volné pokusy + 10 Penalizované pokusy (-10 % penalizace za každé odevzdání)</td>
+       </tr>
+
+       <tr>
+        <td class="lbCell" align="left"><b>Nápovědy:</b></td>
+        <td class="rbCell" colspan="2" align="left">0 / 2 Volné nápovědy + 2 Penalizované nápovědy (-10 % penalizace za každou nápovědu)</td>
+       </tr>
+
+       <tr>
+        <td class="lrtbCell" colspan="3" align="left"><p>Úkolem je napsat program, který pomůže při vyvažování nákladu.</p>
+
+<p>Předpokládejme, že máme naložit náklad na nějaký dopravní prostředek 
+(loď, letadlo). Aby byla zajištěna bezpečná doprava, je potřeba náklad 
+vyvážit. Někdy to není možné rozmístěním vlastního nákladu a je potřeba 
+přidat balastní náklad o zadané hmotnosti. Máme k dispozici normovaná 
+závaží o definovaných hmotnostech, každé v libovolném množství kusů. 
+Úkolem je sestavit z těchto normalizovaných závaží zadanou hmotnost 
+s tím, že požadujeme co nejmenší množný počet kusů použitých závaží.</p>
+
+<p>Vstupem programu je definice normovaných závaží. Počet různých hmotností  
+je <tt>n</tt>, následuje <tt>n</tt> celých čísel, která definují hmotnosti 
+jednotlivých závaží. Po zadání závaží je programu v cyklu předána požadovaná 
+hmotnost <tt>x</tt> (celé číslo), program pro tuto hmotnost vypočte, jak ji 
+sestavit ze zadaných závaží (aby byl počet použitých závaží co nejmenší). 
+Výpočet končí při dosažení konce souboru (EOF).</p>
+
+<p>Výstupem programu je pro každou hmotnost <tt>x</tt> rozklad na definovaná 
+závaží. Formát výstupu je zřejmý z ukázek níže (pro každou hmotnost závaží 
+je uveden počet kusů).</p>
+
+<p>Program musí ošetřovat nesprávné vstupy. Pokud jsou na vstupu neplatná data, 
+program vypíše chybové hlášení a ukončí se. Za chybu je považováno:</p>
+
+<ul>
+ <li>chybějící, neceločíselná, nulová nebo záporná hodnota počtu závaží <tt>n</tt>,</li>
+ <li>chybějící, neceločíselná, nulová, záporná nebo opakující se hmotnost závaží,</li>
+ <li>v nominálních hmotnostech chybí váha 1 (bez této hmotnosti nelze některé hmostnosti sestavit),</li>
+ <li>neceločíselná, nulová nebo záporná sestavovaná hmotnost <tt>x</tt>.</li>
+</ul>
+
+<p>Váš program bude spouštěn v omezeném testovacím prostředí. Je omezen
+dobou běhu (limit je vidět v logu referenčního řešení) a dále je omezena i
+velikost dostupné paměti. Testovací prostředí dále zakazuje používat některé
+"nebezpečné funkce" -- funkce pro spouštění programu, pro práci se sítí, ...
+Pokud jsou tyto funkce použité, program se nespustí.</p>
+
+<p>V závislosti na zvoleném algoritmu může být úloha výpočetně náročnější.
+Aby program dokončil výpočet do časového limitu, musíte časově kritické části
+implementovat efektivně, naivní řešení neprojde ani povinnými testy. Pro zvládnutí 
+povinných testů je potřeba omezovat hloubku rekurze tak, aby se zbytečně nepočítaly 
+varianty, které nemohou být výsledkem. Pro zvládnutí bonusového testu je 
+potřeba použít techniky dynamického programování.</p>
+
+<b>Ukázka práce programu:</b>
+<hr>
+<pre>Zadejte pocet zavazi:
+6
+Zadejte hmotnosti zavazi:
+1 2 5 10 20 50
+Zadejte hledanou hmotnost:
+37
+ = 1 x 2 + 1 x 5 + 1 x 10 + 1 x 20
+53
+ = 1 x 1 + 1 x 2 + 1 x 50
+146
+ = 1 x 1 + 1 x 5 + 2 x 20 + 2 x 50
+</pre>
+<hr>
+<pre>Zadejte pocet zavazi:
+8
+Zadejte hmotnosti zavazi:
+10 20 60 95 1 2 4 5
+Zadejte hledanou hmotnost:
+124
+ = 1 x 4 + 2 x 60
+28
+ = 2 x 4 + 1 x 20
+125
+ = 1 x 10 + 1 x 20 + 1 x 95
+</pre>
+<hr>
+<pre>Zadejte pocet zavazi:
+6
+Zadejte hmotnosti zavazi:
+2 5 10 20 40 50
+Nespravny vstup.
+</pre>
+<hr>
+<b>Poznámky:</b><br>
+<ul> 
+ <li>Naivní postup, kdy se závaží přidávají od nejvyšší nominální hmotnosti 
+     k nejnižší, nevede k cíli. Např. pro ukázkový běh s hodnotami závaží 
+ <pre>   10 20 60 95 1 2 4 5
+ </pre>
+    a hmotnosti <tt>124</tt> by naivní postup vybral výsledek:
+ <pre>    = 1 x 95 + 1 x 20 + 1 x 5 + 1 x 4
+ </pre>
+  tedy celkem 4 závaží. Ale správný výsledek je:
+ <pre>    = 2 x 60 + 1 x 4
+ </pre>
+  tedy pouze 3 závaží.</li>
+
+ <li>Pořadí závaží na výstupu programu není podstatné. Testovací prostředí 
+   si případně hodnoty před porovnáním prohodí. Tedy pro vstup:
+ <pre>   10 20 60 95 1 2 4 5
+ </pre>
+  a sestavovanou hmotnost <tt>124</tt> jsou správné obě odpovědi:
+ <pre>   = 2 x 60 + 1 x 4
+   = 1 x 4 + 2 x 60 
+ </pre></li>
+
+ <li>Některé výsledky mohou být sestaveny více způsoby. Například pro vstup 
+ <pre>   10 20 60 95 1 2 4 5
+ </pre>
+ lze hmotnost <tt>125</tt> sestavit takto:
+ <pre>   = 1 x 95 + 1 x 20 + 1 x 10
+   = 2 x 60 + 1 x 5
+ </pre>
+ Oba výsledky jsou správné, protože v obou případech jsou použita 3 závaží 
+ z definované sady. Testovací prostředí v takovém případě uznává kterýkoliv 
+ výsledek (kritériem je správná výsledná hmotnost a stejný počet použitých závaží).</li>
+</ul>
+</td>
+       </tr>
+
+
+       <tr>
+        <td class="ltbCell" colspan="2" align="left"><b>Vzorová data:</b></td>
+        <td class="rtbCell" align="center"><div class="but1 w120"><div class="but2"><a class="butLink" href="https://progtest.fit.cvut.cz/index.php?X=TaskS&amp;Cou=87&amp;Tgr=585&amp;Tsk=992">Download</a></div></div></td>
+       </tr>
+
+
+
+
+
+
+
+
+
+
+
+      </tbody></table>
+     </div>
+    </div>
+
+
+ <br>
+ <div class="topLayout">
+  <div class="outBox">
+   <table id="reftable" width="100%" cellspacing="0" cellpadding="2" border="0">
+   <tbody><tr>
+    <td class="ltbSepCell" align="left"><input name="SHOW_REF" onchange="showRefSolution()" type="checkbox">&nbsp;<b>Referenční řešení</b></td>
+    <td class="rtbSepCell" align="right">&nbsp;</td>
+   </tr>
+   <tr style="display: none;">
+    <td class="lrtbCell" colspan="2" align="left"><ul><li><b>Hodnotitel: automat</b><ul><li>Program zkompilován</li><li>Test 'Základní test s parametry podle ukázky': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Max doba běhu: 0.005 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.015 s</li><li>Využití paměti: 11720 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test mezních hodnot': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.006 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.026 s</li><li>Využití paměti: 11720 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test ošetření nesprávných vstupů': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.005 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.054 s</li><li>Využití paměti: 11720 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test náhodnými daty': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.008 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.030 s</li><li>Využití paměti: 11720 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test náhodnými daty (velký rozsah, bonus)': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Max doba běhu: 0.949 s (limit: 4.000 s)</li><li>Celková doba běhu: 1.144 s</li><li>Využití paměti: 16084 KiB (limit: 32892 KiB)</li><li>Úspěch v bonusovém testu, hodnocení: 120.00 %</li></ul></li>
+<li>Celkové hodnocení: 120.00 % (= 1.00 * 1.00 * 1.00 * 1.00 * 1.20)</li></ul></li><li>Celkové procentní hodnocení: 120.00 %</li><li>Bonus za včasné odevzdání: 0.50</li><li>Celkem bodů: 1.20 * ( 5.00 + 0.50 ) = 6.60</li></ul></td>
+   </tr>
+    <tr style="display: none;">
+  <td class="ltbCell" align="left"><b>SW metriky:</b></td>
+  <td class="rtbCell" colspan="2" align="left">
+   <table cellpadding="2" border="0">
+    <tbody><tr>
+     <td>&nbsp;</td>
+     <td class="ac">Celkem</td>
+     <td class="ac">Průměr</td>
+     <td class="ac">Maximum</td>
+     <td>Jméno funkce</td>
+    </tr>
+    <tr>
+     <td>Funkce:</td>
+     <td class="ar"><b>7</b></td>
+     <td class="ar">--</td>
+     <td class="ar">--</td>
+     <td>--</td>
+    </tr>
+    <tr>
+     <td>Řádek kódu:</td>
+     <td class="ar"><b>135</b></td>
+     <td class="ar"><span class="textOk">19.29 ± 10.89</span></td>
+     <td class="ar"><span class="textOk">39</span></td>
+     <td><tt>main(...)</tt></td>
+    </tr>
+    <tr>
+     <td>Cyklomatická složitost:</td>
+     <td class="ar"><b>44</b></td>
+     <td class="ar"><span class="textOk">6.29 ± 4.27</span></td>
+     <td class="ar"><span class="textOk">13</span></td>
+     <td><tt>readSections(int *)</tt></td>
+    </tr>
+   </tbody></table>
+  </td>
+ </tr>
+   </tbody></table>
+  </div>
+ </div>
+
+
+
+
+ <br>
+ <div class="topLayout">
+  <div class="outBox">
+   <table id="maintable" width="100%" cellspacing="0" cellpadding="2" border="0">
+    <colgroup><col width="200">
+    <col>
+    <col width="130">
+
+   </colgroup><tbody><tr>
+    <td class="ltbOkSepCell" align="left"><b>1</b></td>
+    
+    
+   </tr>
+   <tr>
+    <td class="ltCell" align="left"><b>Stav odevzdání:</b></td>
+    <td class="tCell" align="left">Ohodnoceno</td>
+
+
+
+    <td class="rtbCell" rowspan="2">&nbsp;</td>
+
+
+   </tr>
+
+   <tr>
+    <td class="lbCell" align="left"><b>Hodnocení:</b></td>
+    <td class="bCell" align="left">5.5000</td>
+   </tr>   <tr>
+    <td class="lrtbCell" colspan="3" align="left"><ul><li><b>Hodnotitel: automat</b><ul><li>Program zkompilován</li><li>Test 'Základní test s parametry podle ukázky': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Max doba běhu: 0.005 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.016 s</li><li>Využití paměti: 11724 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test mezních hodnot': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.010 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.031 s</li><li>Využití paměti: 12000 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test ošetření nesprávných vstupů': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.006 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.058 s</li><li>Využití paměti: 11724 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test náhodnými daty': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Max doba běhu: 0.103 s (limit: 2.000 s)</li><li>Celková doba běhu: 0.149 s</li><li>Využití paměti: 12752 KiB (limit: 14337 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test náhodnými daty (velký rozsah, bonus)': Program překročil přidělenou maximální dobu běhu<ul><li>Program násilně ukončen po: 4.012 s (limit: 4.000 s)</li><li>Neúspěch v bonusovém testu, hodnocení: Bonus nebude udělen</li><li><input name="cb_T912279" onchange="CBpressed( 'T912279' )" type="checkbox">&nbsp;Překročení doby běhu<div id="pre_T912279" style="display: none; padding-left: 20px;"><input name="cb_I912279" onchange="CBpressed( 'I912279' )" type="checkbox">&nbsp;Vstupní data&nbsp;<a href="https://progtest.fit.cvut.cz/index.php?X=Advice&amp;UID=I912279">[1177 B / 1177 B]</a><br><pre id="pre_I912279" style="display: none">100
+5897 8010 1555 6542 9673 6585 5409 16 4981 5369 3744 4899 5328 5490 7419 7701 4854 3880 6326 3743 9143 7606 5957 4234 5640 5132 4187 3964 7832 3746 5884 8575 2189 7415 2348 9969 3585 9021 7712 904 5924 3923 396 4995 9578 5437 527 7224 9884 9030 3926 2684 8877 3254 9159 3398 9520 1 8082 5235 3366 8305 1155 739 788 1504 4635 9873 339 2356 7009 2333 9735 1998 1608 5418 7061 6667 5385 130 8940 4835 7315 8858 4744 1420 9283 9927 9454 159 185 8701 7322 3057 7075 1800 5377 9255 2579 698
+469318
+463991
+14066
+135326
+971939
+954287
+52712
+446161
+766570
+534433
+273138
+430362
+586133
+825925
+781891
+652763
+960380
+889297
+33494
+999390
+223566
+965962
+248266
+198391
+710286
+331488
+105253
+317694
+700547
+852618
+527168
+182512
+659000
+158383
+198519
+321094
+28982
+284901
+48092
+765896
+111172
+254377
+17941
+463019
+90862
+400029
+284080
+31694
+929925
+776929
+705687
+477390
+852426
+708999
+692129
+209504
+410454
+247557
+188284
+313307
+393433
+968080
+901965
+644928
+55059
+348464
+811893
+579572
+582615
+771393
+995260
+472275
+370227
+620992
+760896
+365414
+317325
+723388
+343336
+679541
+33951
+563864
+146325
+488353
+863524
+929863
+878632
+142462
+40242
+337171
+323474
+60953
+981713
+332378
+863678
+248417
+717846
+392329
+952158
+765288
+</pre></div></li></ul></li>
+<li>Celkové hodnocení: 100.00 % (= 1.00 * 1.00 * 1.00 * 1.00)</li></ul></li><li>Celkové procentní hodnocení: 100.00 %</li><li>Bonus za včasné odevzdání: 0.50</li><li>Celkem bodů: 1.00 * ( 5.00 + 0.50 ) = 5.50</li></ul></td>
+   </tr> <tr>
+  <td class="ltbCell" align="left"><b>SW metriky:</b></td>
+  <td class="rtbCell" colspan="2" align="left">
+   <table cellpadding="2" border="0">
+    <tbody><tr>
+     <td>&nbsp;</td>
+     <td class="ac">Celkem</td>
+     <td class="ac">Průměr</td>
+     <td class="ac">Maximum</td>
+     <td>Jméno funkce</td>
+    </tr>
+    <tr>
+     <td>Funkce:</td>
+     <td class="ar"><b>16</b></td>
+     <td class="ar">--</td>
+     <td class="ar">--</td>
+     <td>--</td>
+    </tr>
+    <tr>
+     <td>Řádek kódu:</td>
+     <td class="ar"><b>194</b></td>
+     <td class="ar"><span class="textOk">12.13 ± 15.11</span></td>
+     <td class="ar"><span class="textWarn">57</span></td>
+     <td><tt>main(...)</tt></td>
+    </tr>
+    <tr>
+     <td>Cyklomatická složitost:</td>
+     <td class="ar"><b>43</b></td>
+     <td class="ar"><span class="textOk">2.69 ± 4.07</span></td>
+     <td class="ar"><span class="textOk">17</span></td>
+     <td><tt>main(...)</tt></td>
+    </tr>
+   </tbody></table>
+  </td>
+ </tr>   </tbody></table>
+  </div>
+ </div> <br>
+ 
+  </center>
+ </form>
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+<!--
+
+var deadLine = new Date ( 1387148399 * 1000 );
+
+function CBpressed ( num )
+ {
+   var pre, cb;
+
+   cb = MM_findObj ( "cb_" + num );
+   pre = MM_findObj ( "pre_" + num );
+   if ( cb != null && pre != null )
+    {
+      pre . style . display = cb . checked ? "block" : "none";
+    }
+ }
+
+function unlockAdvice ( url )
+ {
+   if ( confirm ( 'Máte k dispozici pouze omezený počet nápověd. Navíc, použití nápovědy může snížit bodové hodnocení. Opravdu chcete zpřístupnit tuto nápovědu?' ) )
+    this . location = url;
+ }
+
+function setCountdown ( )
+ {
+   var d = new Date ();
+   var x = ( deadLine . getTime () - d . getTime () );
+   var tgt = document . getElementById ( "countdown" );
+
+   if ( x > 0 )
+    {
+      var s = Math . floor ( x / 1000 );
+      var ms = (x % 1000) + "";
+
+      while ( ms . length  < 3 ) ms = "0" + ms;
+
+      tgt . innerHTML = s + "." + ms + " sec";
+
+      window . setTimeout ( setCountdown, 117 );
+    }
+   else
+    {
+      tgt . innerHTML = '&nbsp;';
+    }
+ }
+
+function showRefSolution ( )
+ {
+   var t = document . getElementById ( "reftable" );
+   var x = document . getElementsByName ( "SHOW_REF" )[0];
+
+   if ( ! x ) return;
+   var r1 = t . rows[1], r2 = t . rows[2];
+
+   if ( x . checked )
+    {
+      r1 . style . display = "";
+      if ( r2 ) r2 . style . display = "";
+    }
+   else
+    {
+      r1 . style . display = "none";
+      if ( r2 ) r2 . style . display = "none";
+    }
+ }
+
+
+setCountdown ();
+showRefSolution ();
+
+// -->
+</script>
+
+
+
+
+
+ 
+
+
+</body></html>
+<!-- Template run time: 0.049551963806152 sec -->

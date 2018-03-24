@@ -1,0 +1,455 @@
+<!--?xml version="1.0" encoding="utf-8" ?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml-transitional.dtd">
+<html><head>
+  <title>holoumar@progtest.fit.cvut.cz - ProgTest</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="assignment_files/css.css" rel="stylesheet" type="text/css">
+  <script src="assignment_files/shared.js" language="JavaScript" type="text/javascript"></script>
+  
+ </head>
+ <body text="#000000" bgcolor="#828273">
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+   <tbody><tr height="25">
+    <td bgcolor="#00ff00" align="left"><span class="navLink"><a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Main">ProgTest</a>&nbsp;&nbsp;►&nbsp;&nbsp;<a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Course&amp;Cou=87">BI-PA1 (13/14 ZS)</a>&nbsp;&nbsp;►&nbsp;&nbsp;<a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=TaskGrp&amp;Cou=87&amp;Tgr=584">Domácí úloha 06</a>&nbsp;&nbsp;►&nbsp;&nbsp;<b>Politicky korektní vyjadřování</b></span></td>
+    <td bgcolor="#00ff00" align="right"><a class="navLink" href="https://progtest.fit.cvut.cz/index.php?X=Logout">Logout</a></td>
+   </tr>
+  </tbody></table>
+<br>
+
+
+
+
+ <br>
+ <br>
+   <center>
+   <div class="topLayout">
+    <div class="outBox">
+     <table class="header" width="100%" cellspacing="0" cellpadding="0">
+      <tbody><tr>
+       <td class="header"><b>Politicky korektní vyjadřování</b></td>
+      </tr>
+     </tbody></table>
+    </div>
+   </div>
+  </center>
+ <form name="form1" method="post" action="?X=TaskU&amp;Cou=87&amp;Tgr=584&amp;Tsk=990" enctype="multipart/form-data">
+  <center>
+    <div class="topLayout">
+     <div class="outBox">
+      <table id="maintable" width="100%" cellspacing="0" cellpadding="2" border="0">
+       <colgroup><col width="200">
+       <col>
+       <col width="130">
+
+       </colgroup><tbody><tr>
+        <td class="ltCell" align="left"><b>Termín odevzdání:</b></td>
+        <td class="tCell" align="left"><b>08.12.2013 23:59:59</b></td>
+        <td class="rtCell" id="countdown" align="right">&nbsp;</td>
+       </tr>
+
+       <tr>
+        <td class="lCell" align="left"><b>Hodnocení:</b></td>
+        <td class="rCell" colspan="2" align="left"><b>5.5000</b></td>
+       </tr>
+       <tr>
+        <td class="lCell" align="left"><b>Max. hodnocení:</b></td>
+        <td class="rCell" colspan="2" align="left"><b>5.0000</b> (bez bonusů)</td>
+       </tr>
+       <tr>
+        <td class="lCell" align="left"><b>Odevzdaná řešení:</b></td>
+        <td class="rCell" colspan="2" align="left">1 /  20 Volné pokusy + 10 Penalizované pokusy (-10 % penalizace za každé odevzdání)</td>
+       </tr>
+
+       <tr>
+        <td class="lbCell" align="left"><b>Nápovědy:</b></td>
+        <td class="rbCell" colspan="2" align="left">0 / 2 Volné nápovědy + 2 Penalizované nápovědy (-10 % penalizace za každou nápovědu)</td>
+       </tr>
+
+       <tr>
+        <td class="lrtbCell" colspan="3" align="left"><p>Vaším úkolem je vytvořit funkci (ne program, pouze funkci), která dokáže pomoci PR oddělení při 
+formulaci politicky korektních tiskových prohlášení.</p>
+
+<p>S rozvojem naší společnosti je spojená nutnost formulovat své myšlenky tak, aby prohlášení nemohlo 
+nikoho ranit či dokonce urazit. Tomuto trendu se říká politická korektnost, lidově též newspeak. 
+Podobnost s pojmem newspeak z Orwellova románu je pochopitelně čistě náhodná. Označit někoho za 
+"flákače" je prostě nepřípustné, naproti tomu pojem "osoba se specifickou potřebou plánování 
+účasti v pracovním procesu" je zcela jistě univerzálně použitelné.</p>
+
+<p>Vámi implementovaná funkce tomuto procesu bude napomáhat. Vypisovat dlouhé politicky korektní
+fráze odmítají i osoby bez specifických potřeb plánování účasti v pracovním procesu. Implementovaná 
+funkce bude v textu nahrazovat nevhodné politicky nekorektní formulace za jejich správnou náhradu. 
+Rozhraní funkce bude:</p>
+
+<pre>char * newSpeak ( const char * text, const char * (*replace)[2] );
+</pre>
+
+<p>Parametry funkce jsou:</p>
+<ul>
+ <li><tt>text</tt> - původní text, ve kterém má dojít k náhradě nevhodných formulací. Tento parametr je 
+   <tt>const</tt>, tedy funkce jej může pouze číst,</li>
+ <li><tt>replace</tt> - je pole s dvojicemi řetězců, k nahrazení. Pole <tt>replace</tt> je dvojrozměrné, 
+   obsahuje <tt>n</tt> řádek a dva sloupce. Ve sloupci 0 je řetězec nevhodné fráze a ve sloupci 1 je 
+   její politicky korektní náhrada. Počet řádek pole není explicitně určen, víte ale, že poslední řádka v poli 
+   obsahuje dva ukazatele s hodnotou <tt>NULL</tt>.</li>
+ <li>Návratovou hodnotou funkce je řetězec s provedenými náhradami. Tento řetězec musí být funkcí dynamicky 
+   alokován (buď <tt>malloc</tt> nebo <tt>realloc</tt>). Volající řetězec použije a po jeho použití jej uvolní 
+   z paměti (zavolá <tt>free</tt>). V případě chybných parametrů vrací funkce <tt>NULL</tt>.</li>
+</ul>
+
+<p>Chceme, aby náhrady v řetězci byly jednoznačné. Toho dosáhneme následujícím:</p>
+<ul>
+ <li>text nahrazujeme zleva doprava,</li>
+ <li>jednou nahrazený text již není znovu nahrazován, v náhradách pokračujeme za nahrazeným textem 
+    (viz např. ukázka "specialist"),</li>
+ <li>nahrazované fráze (sloupec 0) jsou jednoznačné, tedy žádný vzor nesmí být předponou jiného vzoru. 
+     Funkce před zahájením práce zkontroluje, že toto platí, pokud ne, vrátí chybovou signalizaci 
+     hodnotou <tt>NULL</tt>. V ukázkovém běhu je to porušeno u dvojice <tt>fail</tt> a <tt>failure</tt>.</li>
+</ul>
+
+<p>Všechny řetězce, které funkce dostává/vrací jsou ASCIIZ řetězce (nulou ukončené). 
+Při porovnávání řetězců funkce rozlišuje malá a velká písmenka.</p>
+
+ 
+<p>Odevzdávejte zdrojový soubor, který obsahuje implementaci požadované funkce
+<tt>newSpeak</tt>. Do zdrojového souboru přidejte i další Vaše podpůrné funkce, které jsou
+z <tt>newSpeak</tt> volané. Funkce bude volaná z testovacího prostředí, je proto
+důležité přesně dodržet zadané rozhraní funkce. Za základ pro implementaci použijte
+kód z ukázky níže. V kódu chybí vyplnit funkci <tt>newSpeak</tt> (a případné další
+podpůrné funkce). Ukázka obsahuje testovací funkci <tt>main</tt>, uvedené hodnoty jsou
+použité při základním testu. Všimněte si, že vkládání hlavičkových souborů a funkce
+<tt>main</tt> jsou zabalené v bloku podmíněného překladu (<tt>#ifdef/#endif</tt>). Prosím, ponechte
+bloky podmíněného překladu i v odevzdávaném zdrojovém souboru. Podmíněný překlad
+Vám zjednoduší práci. Při kompilaci na Vašem počítači můžete program normálně
+spouštět a testovat. Při kompilaci na Progtestu funkce <tt>main</tt> a vkládání
+hlavičkových souborů "zmizí", tedy nebude  kolidovat s hlavičkovými soubory a funkcí
+<tt>main</tt> testovacího prostředí.</p>
+
+<p>Váš program bude spouštěn v omezeném testovacím prostředí. Je omezen
+dobou běhu (limit je vidět v logu referenčního řešení) a dále je omezena i
+velikost dostupné paměti. Časové limity jsou nastavené tak, aby rozumná
+implementace naivního algoritmu prošla všemi povinnými testy. Řešení fungující
+v povinných testech může získat nominálních 100% bodů. Bonusový test
+vyžaduje časově a paměťově efektivní výpočet i pro dlouhé řetězce obsahující 
+mnoho slov a slovníky obsahující stovky dlouhých frází. První bonus kontroluje 
+rychlost, druhý paměťovou náročnost.</p>
+
+<p>Pro implementaci musíte použít C řetězce. C++ řetězce (<tt>std::string</tt>)
+a STL jsou zakázané, jejich použití povede k chybě při kompilaci.</p>
+
+
+<b>Ukázka použití funkce:</b><br>
+<hr>
+<pre>#ifndef __PROGTEST__
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;ctype.h&gt;
+#endif /* __PROGTEST__ */
+
+char * newSpeak ( const char * text, const char * (*replace)[2] )
+ {
+   /* todo */
+ }
+
+#ifndef __PROGTEST__
+int main ( int argc, char * argv [] )
+ {
+   char * res;
+
+   const char * d1 [][2] = {
+     { "murderer", "termination specialist" },
+     { "failure", "non-traditional success" },
+     { "specialist", "person with certified level of knowledge" },
+     { "dumb", "cerebrally challenged" },
+     { "teacher", "voluntary knowledge conveyor" },
+     { "evil", "nicenest deprived" },
+     { "incorrect answer", "alternative answer" },
+     { "student", "client" },
+     { NULL, NULL }
+    };
+
+
+   const char * d2 [][2] = {
+     { "fail", "suboptimal result" },
+     { "failure", "non-traditional success" },
+     { NULL, NULL }
+    };
+
+
+   res = newSpeak ( "Everybody is happy.", d1 );
+   /* res = "Everybody is happy."*/
+   free ( res );
+
+   res = newSpeak ( "The student answered an incorrect answer.", d1 );
+   /* res = "The client answered an alternative answer."*/
+   free ( res );
+
+   res = newSpeak ( "He was dumb, his failure was expected.", d1 );
+   /* res = "He was cerebrally challenged, his non-traditional success was expected."*/
+   free ( res );
+
+   res = newSpeak ( "The evil teacher became a murderer.", d1 );
+   /* res = "The nicenest deprived voluntary knowledge conveyor became a termination specialist."*/
+   free ( res );
+
+   res = newSpeak ( "Devil's advocate.", d1 );
+   /* res = "Dnicenest deprived's advocate."*/
+   free ( res );
+
+   res = newSpeak ( "Hello.", d2 );
+   /* res = NULL */
+
+   return 0;
+ }
+#endif /* __PROGTEST__ */
+</pre>
+</td>
+       </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+      </tbody></table>
+     </div>
+    </div>
+
+
+ <br>
+ <div class="topLayout">
+  <div class="outBox">
+   <table id="reftable" width="100%" cellspacing="0" cellpadding="2" border="0">
+   <tbody><tr>
+    <td class="ltbSepCell" align="left"><input name="SHOW_REF" onchange="showRefSolution()" type="checkbox">&nbsp;<b>Referenční řešení</b></td>
+    <td class="rtbSepCell" align="right">&nbsp;</td>
+   </tr>
+   <tr style="display: none;">
+    <td class="lrtbCell" colspan="2" align="left"><ul><li><b>Hodnotitel: automat</b><ul><li>Program zkompilován</li><li>Test 'Zakladni test podle ukazky': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Celková doba běhu: 0.000 s (limit: 2.000 s)</li><li>Využití paměti: 12540 KiB (limit: 17267 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test meznich hodnot': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 0.000 s (limit: 2.000 s)</li><li>Využití paměti: 12540 KiB (limit: 17267 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test s nespravnymi nahradami': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 0.000 s (limit: 2.000 s)</li><li>Využití paměti: 12540 KiB (limit: 17267 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 0.072 s (limit: 2.000 s)</li><li>Využití paměti: 12672 KiB (limit: 17267 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty + test prace s pameti': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 2.367 s (limit: 5.000 s)</li><li>Využití paměti: 22944 KiB (limit: 29366 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty (dlouhe retezce, bonusovy)': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Celková doba běhu: 0.755 s (limit: 4.000 s)</li><li>Využití paměti: 18560 KiB (limit: 91486 KiB)</li><li>Úspěch v bonusovém testu, hodnocení: 120.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty (dlouhe retezce, bonusovy)': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Celková doba běhu: 0.748 s (limit: 4.000 s)</li><li>Využití paměti: 18572 KiB (limit: 21173 KiB)</li><li>Úspěch v bonusovém testu, hodnocení: 120.00 %</li></ul></li>
+<li>Všechny paměťové bloky byly uvolněné - ok.</li><li>Celkové hodnocení: 144.00 % (= 1.00 * 1.00 * 1.00 * 1.00 * 1.00 * 1.20 * 1.20)</li></ul></li><li>Celkové procentní hodnocení: 144.00 %</li><li>Bonus za včasné odevzdání: 0.50</li><li>Celkem bodů: 1.44 * ( 5.00 + 0.50 ) = 7.92</li></ul></td>
+   </tr>
+    <tr style="display: none;">
+  <td class="ltbCell" align="left"><b>SW metriky:</b></td>
+  <td class="rtbCell" colspan="2" align="left">
+   <table cellpadding="2" border="0">
+    <tbody><tr>
+     <td>&nbsp;</td>
+     <td class="ac">Celkem</td>
+     <td class="ac">Průměr</td>
+     <td class="ac">Maximum</td>
+     <td>Jméno funkce</td>
+    </tr>
+    <tr>
+     <td>Funkce:</td>
+     <td class="ar"><b>12</b></td>
+     <td class="ar">--</td>
+     <td class="ar">--</td>
+     <td>--</td>
+    </tr>
+    <tr>
+     <td>Řádek kódu:</td>
+     <td class="ar"><b>221</b></td>
+     <td class="ar"><span class="textOk">18.42 ± 12.56</span></td>
+     <td class="ar"><span class="textWarn">50</span></td>
+     <td><tt>newSpeak(...)</tt></td>
+    </tr>
+    <tr>
+     <td>Cyklomatická složitost:</td>
+     <td class="ar"><b>53</b></td>
+     <td class="ar"><span class="textOk">4.42 ± 3.40</span></td>
+     <td class="ar"><span class="textOk">13</span></td>
+     <td><tt>newSpeak(...)</tt></td>
+    </tr>
+   </tbody></table>
+  </td>
+ </tr>
+   </tbody></table>
+  </div>
+ </div>
+
+
+
+
+ <br>
+ <div class="topLayout">
+  <div class="outBox">
+   <table id="maintable" width="100%" cellspacing="0" cellpadding="2" border="0">
+    <colgroup><col width="200">
+    <col>
+    <col width="130">
+
+   </colgroup><tbody><tr>
+    <td class="ltbOkSepCell" align="left"><b>1</b></td>
+    
+    
+   </tr>
+   <tr>
+    <td class="ltCell" align="left"><b>Stav odevzdání:</b></td>
+    <td class="tCell" align="left">Ohodnoceno</td>
+
+
+
+    <td class="rtbCell" rowspan="2">&nbsp;</td>
+
+
+   </tr>
+
+   <tr>
+    <td class="lbCell" align="left"><b>Hodnocení:</b></td>
+    <td class="bCell" align="left">5.5000</td>
+   </tr>   <tr>
+    <td class="lrtbCell" colspan="3" align="left"><ul><li><b>Hodnotitel: automat</b><ul><li>Program zkompilován</li><li>Test 'Zakladni test podle ukazky': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 100.00 %</li><li>Celková doba běhu: 0.000 s (limit: 2.000 s)</li><li>Využití paměti: 12544 KiB (limit: 17267 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test meznich hodnot': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 0.000 s (limit: 2.000 s)</li><li>Využití paměti: 12544 KiB (limit: 17267 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test s nespravnymi nahradami': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 0.000 s (limit: 2.000 s)</li><li>Využití paměti: 12544 KiB (limit: 17267 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 0.048 s (limit: 2.000 s)</li><li>Využití paměti: 12676 KiB (limit: 17267 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty + test prace s pameti': Úspěch<ul><li>Dosaženo: 100.00 %, požadováno: 50.00 %</li><li>Celková doba běhu: 1.171 s (limit: 5.000 s)</li><li>Využití paměti: 22856 KiB (limit: 29366 KiB)</li><li>Úspěch v závazném testu, hodnocení: 100.00 %</li></ul></li>
+<li>Test 'Test nahodnymi daty (dlouhe retezce, bonusovy)': Program překročil přidělenou maximální dobu běhu<ul><li>Vyčerpání limitu na celý test, program násilně ukončen po: 4.005 s (limit: 4.000 s)</li><li>Neúspěch v bonusovém testu, hodnocení: Bonus nebude udělen</li></ul></li>
+<li>Celkové hodnocení: 100.00 % (= 1.00 * 1.00 * 1.00 * 1.00 * 1.00)</li></ul></li><li>Celkové procentní hodnocení: 100.00 %</li><li>Bonus za včasné odevzdání: 0.50</li><li>Celkem bodů: 1.00 * ( 5.00 + 0.50 ) = 5.50</li></ul></td>
+   </tr> <tr>
+  <td class="ltbCell" align="left"><b>SW metriky:</b></td>
+  <td class="rtbCell" colspan="2" align="left">
+   <table cellpadding="2" border="0">
+    <tbody><tr>
+     <td>&nbsp;</td>
+     <td class="ac">Celkem</td>
+     <td class="ac">Průměr</td>
+     <td class="ac">Maximum</td>
+     <td>Jméno funkce</td>
+    </tr>
+    <tr>
+     <td>Funkce:</td>
+     <td class="ar"><b>11</b></td>
+     <td class="ar">--</td>
+     <td class="ar">--</td>
+     <td>--</td>
+    </tr>
+    <tr>
+     <td>Řádek kódu:</td>
+     <td class="ar"><b>205</b></td>
+     <td class="ar"><span class="textOk">18.64 ± 12.28</span></td>
+     <td class="ar"><span class="textOk">43</span></td>
+     <td><tt>newSpeak(...)</tt></td>
+    </tr>
+    <tr>
+     <td>Cyklomatická složitost:</td>
+     <td class="ar"><b>42</b></td>
+     <td class="ar"><span class="textOk">3.82 ± 3.35</span></td>
+     <td class="ar"><span class="textOk">11</span></td>
+     <td><tt>StartsWithPattern(const char *,int,banned *)</tt></td>
+    </tr>
+   </tbody></table>
+  </td>
+ </tr>   </tbody></table>
+  </div>
+ </div> <br>
+  
+  
+  
+  
+  
+  
+ 
+  </center>
+ </form>
+
+
+
+
+
+
+
+
+<script language="javascript" type="text/javascript">
+<!--
+
+var deadLine = new Date ( 1386543599 * 1000 );
+
+function CBpressed ( num )
+ {
+   var pre, cb;
+
+   cb = MM_findObj ( "cb_" + num );
+   pre = MM_findObj ( "pre_" + num );
+   if ( cb != null && pre != null )
+    {
+      pre . style . display = cb . checked ? "block" : "none";
+    }
+ }
+
+function unlockAdvice ( url )
+ {
+   if ( confirm ( 'Máte k dispozici pouze omezený počet nápověd. Navíc, použití nápovědy může snížit bodové hodnocení. Opravdu chcete zpřístupnit tuto nápovědu?' ) )
+    this . location = url;
+ }
+
+function setCountdown ( )
+ {
+   var d = new Date ();
+   var x = ( deadLine . getTime () - d . getTime () );
+   var tgt = document . getElementById ( "countdown" );
+
+   if ( x > 0 )
+    {
+      var s = Math . floor ( x / 1000 );
+      var ms = (x % 1000) + "";
+
+      while ( ms . length  < 3 ) ms = "0" + ms;
+
+      tgt . innerHTML = s + "." + ms + " sec";
+
+      window . setTimeout ( setCountdown, 117 );
+    }
+   else
+    {
+      tgt . innerHTML = '&nbsp;';
+    }
+ }
+
+function showRefSolution ( )
+ {
+   var t = document . getElementById ( "reftable" );
+   var x = document . getElementsByName ( "SHOW_REF" )[0];
+
+   if ( ! x ) return;
+   var r1 = t . rows[1], r2 = t . rows[2];
+
+   if ( x . checked )
+    {
+      r1 . style . display = "";
+      if ( r2 ) r2 . style . display = "";
+    }
+   else
+    {
+      r1 . style . display = "none";
+      if ( r2 ) r2 . style . display = "none";
+    }
+ }
+
+
+setCountdown ();
+showRefSolution ();
+
+// -->
+</script>
+
+
+
+
+
+ 
+
+
+</body></html>
+<!-- Template run time: 0.10198497772217 sec -->
